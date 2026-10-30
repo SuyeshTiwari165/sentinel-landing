@@ -26,15 +26,15 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font: 16px/1.6 ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  font: 16px/1.6 Geist, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 a { color: var(--accent); text-decoration: none; }
-h1, h2, h3 { line-height: 1.15; margin: 0; letter-spacing: -0.02em; }
+h1, h2, h3 { line-height: 1.15; margin: 0; letter-spacing: -0.02em; text-wrap: balance; }
 h1 { font-size: clamp(36px, 5.6vw, 64px); font-weight: 700; max-width: 14ch; }
 h2 { font-size: clamp(28px, 3.6vw, 40px); font-weight: 700; }
 h3 { font-size: 18px; font-weight: 650; letter-spacing: -0.01em; }
-p { margin: 0; }
+p { margin: 0; text-wrap: pretty; }
 button, input { font: inherit; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
 
@@ -123,8 +123,9 @@ button, input { font: inherit; }
 .tool-list li { font-family: ui-monospace, "SFMono-Regular", Menlo, monospace; font-size: 14px; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 6px 10px; }
 
 /* Points (reports, trust) */
-.points { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
-.point { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+/* Two-column ruled list, not a row of equal cards: each point is a line of text with a hairline above it. */
+.points { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 56px; }
+.point { border-top: 1px solid var(--border); padding: 28px 0 32px; }
 .point p { color: var(--muted); margin-top: 10px; font-size: 15px; }
 .inline-cta { margin-top: 32px; }
 .trust { background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--panel) 60%, transparent)); }
@@ -151,6 +152,7 @@ button, input { font: inherit; }
   .nav-links a { padding: 12px 0; font-size: 16px; }
   .nav-inner { position: relative; }
   .section, .final { padding: 64px 20px; }
+  .points { grid-template-columns: 1fr; }
   .lede { font-size: 17px; }
 }
 
