@@ -75,8 +75,8 @@ export default function ScopeGate() {
         </label>
       </div>
       <div className={`verdict ${result.ok ? "allow" : "deny"}`} role="status" aria-live="polite">
-        <span className="verdict-badge">{result.ok ? "Allowed" : "Refused"}</span>
-        <p>{result.reason}</p>
+        <span className="stamp" aria-hidden="true">{result.ok ? "Allowed" : "Refused"}</span>
+        <p><span className="sr-only">{result.ok ? "Allowed. " : "Refused. "}</span>{result.reason}</p>
       </div>
     </div>
   );

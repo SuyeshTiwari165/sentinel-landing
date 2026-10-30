@@ -1,8 +1,8 @@
 import Nav from "./components/Nav.jsx";
 import Hero from "./components/Hero.jsx";
+import Ledger from "./components/Ledger.jsx";
 import Pipeline from "./components/Pipeline.jsx";
 import ScanTypes from "./components/ScanTypes.jsx";
-import Reveal from "./components/Reveal.jsx";
 import { Reports, Trust, FinalCta, Footer } from "./components/Sections.jsx";
 
 // Where the Sentinel app's sign-in page lives. Set VITE_APP_URL when the app is hosted elsewhere.
@@ -16,25 +16,23 @@ export default function App() {
       <main id="main">
         <Hero appUrl={APP_URL} />
 
-        <section className="section" id="how" aria-labelledby="how-title">
-          <Reveal>
-            <h2 id="how-title">How a scan works</h2>
-            <p className="section-lede">Four steps, each one checked before the next begins.</p>
-          </Reveal>
-          <Reveal>
-            <Pipeline />
-          </Reveal>
-        </section>
+        <Ledger
+          id="how"
+          label="Procedure"
+          title="How a scan works"
+          lede="Four steps, each one checked before the next begins."
+        >
+          <Pipeline />
+        </Ledger>
 
-        <section className="section" id="scans" aria-labelledby="scans-title">
-          <Reveal>
-            <h2 id="scans-title">Four kinds of scan</h2>
-            <p className="section-lede">Each scan type runs only the tools it needs, and only after the checks it requires.</p>
-          </Reveal>
-          <Reveal>
-            <ScanTypes />
-          </Reveal>
-        </section>
+        <Ledger
+          id="scans"
+          label="Scan types"
+          title="Four kinds of scan"
+          lede="Each scan type runs only the tools it needs, and only after the checks it requires."
+        >
+          <ScanTypes />
+        </Ledger>
 
         <Reports appUrl={APP_URL} />
         <Trust />

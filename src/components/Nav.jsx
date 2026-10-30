@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Mark from "./Mark.jsx";
 
 export default function Nav({ appUrl }) {
   const [open, setOpen] = useState(false);
@@ -7,7 +8,10 @@ export default function Nav({ appUrl }) {
   return (
     <header className="nav">
       <div className="nav-inner">
-        <a className="brand" href="#top" onClick={close}>Sentinel</a>
+        <a className="brand" href="#top" onClick={close}>
+          <Mark size={22} />
+          <span>Sentinel</span>
+        </a>
         <button
           type="button"
           className="nav-toggle"

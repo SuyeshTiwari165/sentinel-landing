@@ -4,7 +4,7 @@ export default function Hero({ appUrl }) {
   return (
     <section className="hero" id="top">
       <div className="hero-copy">
-        <p className="eyebrow">Authorized scanning</p>
+        <p className="field-label">Form SN-01 / Scope</p>
         <h1>Scan only what you are allowed to scan.</h1>
         <p className="lede">
           Sentinel runs proven open-source scanners, and refuses to start until scope, ownership and
@@ -12,10 +12,10 @@ export default function Hero({ appUrl }) {
         </p>
         <div className="hero-actions">
           <a className="button-link" href={appUrl}>Start a scan</a>
-          <a className="button-link secondary" href="#how">See how it works</a>
+          <a className="button-link secondary" href="#how">How it works</a>
         </div>
       </div>
-      <div className="hero-visual">
+      <div className="hero-form">
         <ScopeGate />
       </div>
     </section>
