@@ -1,5 +1,5 @@
-// The Sentinel mark: a boundary that opens only where authorization is.
-// The gap at the top is the scope grant; the check inside is the authorization.
+// The Sentinel mark: a watchtower with its sightline running through the window.
+// The tower keeps watch over what you are allowed to scan; the line is the scan itself.
 export default function Mark({ size = 24, title, className = "" }) {
   return (
     <svg
@@ -12,19 +12,9 @@ export default function Mark({ size = 24, title, className = "" }) {
       aria-hidden={title ? undefined : "true"}
     >
       <path
-        d="M22 8H14A6 6 0 0 0 8 14V50A6 6 0 0 0 14 56H50A6 6 0 0 0 56 50V14A6 6 0 0 0 50 8H42"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="4"
-        strokeLinecap="round"
-      />
-      <path
-        d="M22 34 30 42 44 26"
-        fill="none"
-        stroke="var(--ledger-tint)"
-        strokeWidth="5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        fill="currentColor"
+        fillRule="evenodd"
+        d="M32 6 48 14V18H16V14ZM22 18H42V28L46 54H18L22 28ZM26 21V28H38V21ZM4 23H22V26.5H4ZM42 23H60V26.5H42ZM12 54H52V58H12Z"
       />
     </svg>
   );
