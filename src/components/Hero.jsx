@@ -7,8 +7,8 @@ export default function Hero({ appUrl }) {
         <p className="field-label">Form SN-01 / Scope</p>
         <h1>Scan only what you are allowed to scan.</h1>
         <p className="lede">
-          Sentinel runs proven open-source scanners, and refuses to start until scope, ownership and
-          authorization are on record.
+          Sentinel runs proven open-source scanners, and refuses to start until a scope grant for the
+          target is on record.
         </p>
         <div className="hero-actions">
           <a className="button-link" href={appUrl}>Start a scan</a>

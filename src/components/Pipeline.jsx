@@ -7,9 +7,9 @@ const STEPS = [
     detail: "Nothing starts until a grant covers the exact target and scan type. Grants expire, and you can revoke them at any time.",
   },
   {
-    title: "Prove ownership",
-    text: "For public targets, add a DNS record or a file that shows you control the site. Internal networks use an agent instead.",
-    detail: "Web and vulnerability scans need a verified claim on the domain. Private addresses can't be verified over the internet, so they use the agent and your attestation.",
+    title: "Pass the gate",
+    text: "Before any tool runs, Sentinel checks that a grant covers the target and scan type. Internal networks also need your own agent online.",
+    detail: "The check runs when you submit and again just before the first tool starts. Private addresses are never scanned from the server; they go through the agent on your network.",
   },
   {
     title: "Run the scan",

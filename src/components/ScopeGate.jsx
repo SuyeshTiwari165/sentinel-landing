@@ -12,7 +12,7 @@ const SCAN_TYPES = [
 const PRIVATE_IP = /^(10\.|192\.168\.|172\.(1[6-9]|2\d|3[01])\.|127\.|169\.254\.)/;
 const IP = /^\d{1,3}(\.\d{1,3}){3}$/;
 
-export function judge({ target, type, grant, ownership }) {
+export function judge({ target, type, grant }) {
   const host = target.trim().toLowerCase();
   if (!host) return { ok: false, reason: "Enter a domain, host, IP or network to check." };
   if (type !== "internal" && PRIVATE_IP.test(host)) {
@@ -27,9 +27,6 @@ export function judge({ target, type, grant, ownership }) {
   if (!grant) {
     return { ok: false, reason: "No scope grant. Attest to the scope and scan types first." };
   }
-  if ((type === "va" || type === "web") && !ownership) {
-    return { ok: false, reason: "Ownership isn't verified. Prove control with a DNS record or a file on the site." };
-  }
   if (type === "internal") {
     return { ok: true, reason: "Allowed, once an agent on that network is online. The grant and the agent are checked again before the scan runs." };
   }
@@ -39,9 +36,8 @@ export function judge({ target, type, grant, ownership }) {
 export default function ScopeGate() {
   const [target, setTarget] = useState("example.com");
   const [type, setType] = useState("web");
-  const [grant, setGrant] = useState(true);
-  const [ownership, setOwnership] = useState(false);
-  const result = judge({ target, type, grant, ownership });
+  const [grant, setGrant] = useState(false);
+  const result = judge({ target, type, grant });
 
   return (
     <div className="gate" aria-labelledby="gate-title">
@@ -68,10 +64,6 @@ export default function ScopeGate() {
         <label className="toggle">
           <input type="checkbox" checked={grant} onChange={(e) => setGrant(e.target.checked)} />
           <span>Scope grant attested</span>
-        </label>
-        <label className="toggle">
-          <input type="checkbox" checked={ownership} onChange={(e) => setOwnership(e.target.checked)} />
-          <span>Ownership verified</span>
         </label>
       </div>
       <div className={`verdict ${result.ok ? "allow" : "deny"}`} role="status" aria-live="polite">
