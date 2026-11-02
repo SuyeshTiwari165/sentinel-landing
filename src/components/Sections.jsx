@@ -11,10 +11,10 @@ const REPORT_POINTS = [
 ];
 
 const TRUST_POINTS = [
-  { title: "Private addresses stay private", text: "The server never scans or verifies private networks. Those scans run through an agent on your own network." },
+  { title: "Private addresses stay private", text: "The server never scans private networks. Those scans run through an agent on your own network." },
   { title: "The AI orders steps, nothing more", text: "It picks the next step from an approved playbook. It can't choose a tool or a flag outside the fixed allow-lists." },
-  { title: "Every grant is on record", text: "Grants, report exports and ownership checks are written to an audit log with the time and the address." },
-  { title: "Built to resist abuse", text: "Sign-in, sharing, exports and ownership checks are rate limited, and failed sign-ins are counted per account." },
+  { title: "Every grant is on record", text: "Grants, scans started or refused, and report exports are written to an audit log with the time and the address." },
+  { title: "Built to resist abuse", text: "Sign-in, sharing and exports are rate limited, and failed sign-ins are counted per account." },
 ];
 
 export function Reports({ appUrl }) {

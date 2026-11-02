@@ -13,14 +13,14 @@ const TYPES = [
     name: "Vulnerability assessment",
     summary: "Find open services, identify them, and check them against known vulnerabilities.",
     tools: ["naabu", "nmap", "httpx", "nuclei", "testssl"],
-    grant: "Scope grant and verified ownership",
+    grant: "Scope grant",
   },
   {
     id: "web",
     name: "Web application",
     summary: "Crawl the site, fingerprint the stack, and test it. ZAP stays passive unless you choose aggressive.",
     tools: ["httpx", "wafw00f", "katana", "nuclei", "nikto", "OWASP ZAP", "testssl", "dnsx"],
-    grant: "Scope grant and verified ownership",
+    grant: "Scope grant",
   },
   {
     id: "internal",
