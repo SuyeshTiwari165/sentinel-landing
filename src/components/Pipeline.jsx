@@ -13,7 +13,7 @@ const STEPS = [
   },
   {
     title: "Run the scan",
-    text: "Open-source scanners run in locked-down containers, one step at a time, in an order fixed by an approved playbook.",
+    text: "Each check runs in a locked-down container, one step at a time, in an order fixed by an approved playbook.",
     detail: "The AI chooses only the next step from the playbook's list. Tools and flags come from fixed allow-lists, so it can't run a tool or a flag that isn't on them.",
   },
   {
